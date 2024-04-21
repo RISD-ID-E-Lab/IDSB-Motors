@@ -1,22 +1,12 @@
-\frametitle{Sweep}
-    \begin{itemize}
-        \item Orange to pin 9, red to 3V3, brown to GND
-    \end{itemize}
-    \begin{lstlisting}[language=c]
-#include <Servo.h>
-Servo myservo;
-void setup() {
-    myservo.attach(9);
-}
+\frametitle{File>Examples>Servo>Knob}
+    Potentiometer: middle pin to A0, side pins to GND/5V
+    \begin{lstlisting}[language=c, numbers=none]
+int potpin = A0;  // analog pin used to connect the potentiometer
+int val;
 void loop() {
-    int pos = 0;
-    for (pos = 0; pos <= 180; pos += 1) {
-        myservo.write(pos);
-        delay(30);
-    }
-    for (pos = 180; pos >= 0; pos -= 1) {
-        myservo.write(pos);
-        delay(30);
-    }
+    val = analogRead(potpin);
+    val = map(val, 0, 1023, 0, 180);
+    myservo.write(val);
+    delay(15);
 }
     \end{lstlisting}

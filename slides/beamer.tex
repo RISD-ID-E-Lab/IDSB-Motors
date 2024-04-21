@@ -438,10 +438,8 @@ void loop() {
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Sweep}
-    \begin{itemize}
-        \item Orange to pin 9, red to 3V3, brown to GND
-    \end{itemize}
+    \frametitle{File>Examples>Servo>Sweep}
+    Orange to pin 9, red to 3V3, brown to GND
     \begin{lstlisting}[language=c]
 #include <Servo.h>
 Servo myservo;
@@ -461,6 +459,22 @@ void loop() {
 }
     \end{lstlisting}
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{File>Examples>Servo>Knob}
+    Potentiometer: middle pin to A0, side pins to GND/5V
+    \begin{lstlisting}[language=c, numbers=none]
+int potpin = A0;  // analog pin used to connect the potentiometer
+int val;
+void loop() {
+    val = analogRead(potpin);            
+    val = map(val, 0, 1023, 0, 180);     
+    myservo.write(val);                  
+    delay(15);                           
+}
+    \end{lstlisting}
+\end{frame}
+
 \begin{frame}
     \frametitle{Servo Pulse}
     \begin{figure}
