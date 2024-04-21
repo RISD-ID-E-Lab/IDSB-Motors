@@ -1,21 +1,22 @@
-\frametitle{Stepper Library}
-    \begin{lstlisting}
-#include <Stepper.h>
-
-// initialize the stepper library on pins 8 through 11:
-Stepper myStepper(stepsPerRevolution, 8, 9, 10, 11);
-
+\frametitle{Sweep}
+    \begin{itemize}
+        \item Orange to pin 9, red to 3V3, brown to GND
+    \end{itemize}
+    \begin{lstlisting}[language=c]
+#include <Servo.h>
+Servo myservo;
 void setup() {
-    // set the speed at 6 rpm:
-    myStepper.setSpeed(6);
-    // initialize the serial port:
-    Serial.begin(9600);
+    myservo.attach(9);
 }
-
 void loop() {
-    // step one revolution  in one direction:
-    Serial.println("clockwise");
-    myStepper.step(2048);
-    delay(500);
+    int pos = 0;
+    for (pos = 0; pos <= 180; pos += 1) {
+        myservo.write(pos);
+        delay(30);
+    }
+    for (pos = 180; pos >= 0; pos -= 1) {
+        myservo.write(pos);
+        delay(30);
+    }
 }
     \end{lstlisting}
