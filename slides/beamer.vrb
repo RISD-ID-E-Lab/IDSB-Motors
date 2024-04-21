@@ -1,12 +1,15 @@
-\frametitle{File>Examples>Servo>Knob}
-    Potentiometer: middle pin to A0, side pins to GND/5V
-    \begin{lstlisting}[language=c, numbers=none]
-int potpin = A0;  // analog pin used to connect the potentiometer
-int val;
-void loop() {
-    val = analogRead(potpin);
-    val = map(val, 0, 1023, 0, 180);
-    myservo.write(val);
-    delay(15);
+\frametitle{Bonus: IoT Servo}
+    \begin{lstlisting}[language=c, firstnumber=25]
+Servo myservo;
+
+void setup() {
+    myservo.attach(2); //GPIO2=D4
+    \end{lstlisting}
+    \begin{lstlisting}[language=c, firstnumber=67]
+if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
+    String payload = https.getString();
+    Serial.println(payload);
+    myservo.write(payload.toInt());
+
 }
     \end{lstlisting}

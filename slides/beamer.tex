@@ -513,4 +513,44 @@ void loop() {
         \end{column}
     \end{columns}
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bonus: IoT Servo}
+    \begin{itemize}
+        \item Tools>Board>ESP8266>NodeMCU 1.0
+        \item File>Examples>ESP8266HTTPClient>BasicHttpsClient
+    \end{itemize}
+    \begin{lstlisting}[language=c, firstnumber=19]
+#define STASSID "RISD-MiscDevices"
+#define STAPSK "T3chn0l0gy"
+    \end{lstlisting}
+    
+    \begin{lstlisting}[language=c, firstnumber=48]
+// client->setFingerprint(fingerprint_sni_cloudflaressl_com);
+// Or, if you happy to ignore the SSL certificate, then use the following line instead:
+client->setInsecure();
+    \end{lstlisting}
+    \begin{lstlisting}[language=c, firstnumber=55] 
+    if (https.begin(*client, "https://idsb-motors.onrender.com/angle")) {  // HTTPS
+    \end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bonus: IoT Servo}
+    \begin{lstlisting}[language=c, firstnumber=25]
+Servo myservo;
+
+void setup() {
+    myservo.attach(2); //GPIO2=D4
+    \end{lstlisting}
+    \begin{lstlisting}[language=c, firstnumber=67]
+if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
+    String payload = https.getString();
+    Serial.println(payload);
+    myservo.write(payload.toInt());
+
+}
+    \end{lstlisting}
+\end{frame}
 \end{document}
