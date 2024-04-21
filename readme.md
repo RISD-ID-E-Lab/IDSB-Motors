@@ -8,6 +8,7 @@
 
 ## Materials
 - [Lecture slides](./slides/beamer.pdf)
+- ESP8266 pinout ![](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP8266-NodeMCU-kit-12-E-pinout-gpio-pin.png?quality=100&strip=all&ssl=1)
 
 ## Links
 - [L298N motor driver instruction](https://howtomechatronics.com/tutorials/arduino/arduino-dc-motor-control-tutorial-l298n-pwm-h-bridge/#google_vignette)
