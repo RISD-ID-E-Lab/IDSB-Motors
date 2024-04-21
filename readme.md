@@ -8,3 +8,7 @@
 
 ## Materials
 - [Lecture slides](./slides/beamer.tex)
+
+## Links
+- [L298N motor driver instruction](https://howtomechatronics.com/tutorials/arduino/arduino-dc-motor-control-tutorial-l298n-pwm-h-bridge/#google_vignette)
+- [ULN2003 driver and stepper motor](https://lastminuteengineers.com/28byj48-stepper-motor-arduino-tutorial/)

@@ -322,5 +322,89 @@ void loop() {
 \end{frame}
 
 \section{Stepper Motor}
+\begin{frame}
+    \frametitle{Stepper Motor}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.7\textheight]{stepper.png}
+        \caption*{(monolithicpower.com)}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{28BYJ-48 Stepper Motor}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+           \begin{itemize}
+        \item 4 coils
+        \item 32 steps per revolution
+        \item plus 64:1 gear ratio
+        \item 2048 steps per revolution
+        \item 5 pins
+    \end{itemize} 
+        \end{column}
+        \begin{column}[]{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.6\textwidth]{28BYJ48-Stepper-Motor-Coil-Structure.png}
+                \caption*{(lastminuteengineering.com)}
+            \end{figure}
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+\begin{frame}
+    \frametitle{Stepper vs DC Motor}
+    \begin{itemize}
+        \item Stepper is very accurate
+        \item More difficult to control
+        \item More power draw, more heat generation
+        \item Stepper is suitable for short period, precise application.
+        \item DC motor is for continuous, powerful application.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ULN2003}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item 7 Darlington pair (BJT)
+                \item $500mA$ emitter current
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[height=0.7\textheight]{uln2003.png}
+                \caption*{(Texas Instrument)}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Stepper Library}
+    \begin{lstlisting}
+#include <Stepper.h>
+
+// initialize the stepper library on pins 8 through 11:
+Stepper myStepper(stepsPerRevolution, 8, 9, 10, 11);
+
+void setup() {
+    // set the speed at 6 rpm:
+    myStepper.setSpeed(6);
+    // initialize the serial port:
+    Serial.begin(9600);
+}
+
+void loop() {
+    // step one revolution  in one direction:
+    Serial.println("clockwise");
+    myStepper.step(2048);
+    delay(500);
+}
+    \end{lstlisting}
+\end{frame}
+
 \section{Servo Motor}
 \end{document}

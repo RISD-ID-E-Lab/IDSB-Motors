@@ -1,14 +1,21 @@
-\frametitle{analogWrite()}
-    \begin{lstlisting}[language=c]
-void loop() {
-    // put your main code here, to run repeatedly:
-    if (clean) {
-        analogWrite(9, inputStr.toInt());
-        Serial.println(inputStr.toInt());
-        // clear the string:
-        inputStr = "";
-        clean = false;
-    }
+\frametitle{Stepper Library}
+    \begin{lstlisting}
+#include <Stepper.h>
 
-    }
+// initialize the stepper library on pins 8 through 11:
+Stepper myStepper(stepsPerRevolution, 8, 9, 10, 11);
+
+void setup() {
+    // set the speed at 6 rpm:
+    myStepper.setSpeed(6);
+    // initialize the serial port:
+    Serial.begin(9600);
+}
+
+void loop() {
+    // step one revolution  in one direction:
+    Serial.println("clockwise");
+    myStepper.step(2048);
+    delay(500);
+}
     \end{lstlisting}
