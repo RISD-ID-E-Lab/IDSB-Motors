@@ -7,7 +7,7 @@
 - Install [ESP8266 Driver](https://randomnerdtutorials.com/install-esp32-esp8266-usb-drivers-cp210x-windows/)
 
 ## Materials
-- [Lecture slides](./slides/beamer.tex)
+- [Lecture slides](./slides/beamer.pdf)
 
 ## Links
 - [L298N motor driver instruction](https://howtomechatronics.com/tutorials/arduino/arduino-dc-motor-control-tutorial-l298n-pwm-h-bridge/#google_vignette)
