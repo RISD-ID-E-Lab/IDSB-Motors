@@ -1,0 +1,14 @@
+\frametitle{analogWrite()}
+    \begin{lstlisting}[language=c]
+void loop() {
+    // put your main code here, to run repeatedly:
+    if (clean) {
+        analogWrite(9, inputStr.toInt());
+        Serial.println(inputStr.toInt());
+        // clear the string:
+        inputStr = "";
+        clean = false;
+    }
+
+    }
+    \end{lstlisting}
