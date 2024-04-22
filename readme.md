@@ -8,7 +8,7 @@
 
 ## Materials
 - [Lecture slides](./slides/beamer.pdf)
-- [Control your servo position online!](https://idsb-motors.onrender.com/angle/set/)
+- [Control your servo position online!](https://idsb-motors.onrender.com/set/)
 - ESP8266 pinout ![](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/05/ESP8266-NodeMCU-kit-12-E-pinout-gpio-pin.png?quality=100&strip=all&ssl=1)
 
 ## Additional Readings
